@@ -1,6 +1,6 @@
 -- Tạo cơ sở dữ liệu
 CREATE DATABASE IF NOT EXISTS th1_todo;
-USE th1_todo;
+USE todolist;
 
 -- Tạo bảng todos
 CREATE TABLE IF NOT EXISTS todos (
