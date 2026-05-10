@@ -43,12 +43,14 @@ npm install
 
 ### 2. Tạo database
 
-Mở MySQL client (Command Line, MySQL Workbench, hoặc tool bất kỳ) và chạy script:
+#### Cái này là bài todo list nên database chỉ có này
+
+Mở MySQL client (Command Line, MySQL Workbench) và chạy script:
 
 ```sql
 -- Có thể copy nội dung từ src/utils/create_table.sql
-CREATE DATABASE IF NOT EXISTS th1_todo;
-USE th1_todo;
+CREATE DATABASE IF NOT EXISTS todolist;
+USE todolist;
 
 CREATE TABLE IF NOT EXISTS todos (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -66,10 +68,6 @@ INSERT INTO todos (title, description) VALUES
   ('Viết API', 'Xây dựng RESTful API');
 ```
 
-Hoặc chạy trực tiếp file SQL:
-```bash
-mysql -u root -p < src/utils/create_table.sql
-```
 
 ### 3. Cấu hình biến môi trường
 
@@ -84,24 +82,22 @@ Nội dung file `.env`:
 DB_HOST=localhost
 DB_PORT=3306
 DB_USER=root
-DB_PASSWORD=your_password    # ← Sửa mật khẩu MySQL của bạn
-DB_NAME=th1_todo
+DB_PASSWORD=mật khẩu db đó    # ← Sửa mật khẩu MySQL của bạn
+DB_NAME=Tên db đã tạo
 PORT=3000                    # Cổng chạy server (mặc định 3000)
 ```
 
 ### 4. Khởi động server
 
-**Chế độ production:**
-```bash
-npm start
-```
 
-**Chế độ development (tự động restart khi code thay đổi):**
+**Chạy lệnh sau để test:**
 ```bash
 npm run dev
 ```
 
 ### 5. Kiểm tra
+
+dùng Frontend cổng 3001 kết nối với BE cổng là 3000
 
 Server sẽ chạy tại: **http://localhost:3000**
 
